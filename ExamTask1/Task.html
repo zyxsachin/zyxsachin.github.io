@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+    <title> This is the first Mobile COmputing task </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+   
+<button onclick="getLocation()">Get initial location</button>
+<p id="geoloc1">Geolocation not available.</p>
+<button onclick="getLocation1()">Get distance to initial location</button>
+<p id="geoloc2">Geolocation not available.</p>
+
+<p id="dist">Distance not detected yet. </p>
+
+<script>
+
+var x = document.getElementById("geoloc1");
+var y = document.getElementById("geoloc2");
+var z = document.getElementById("dist");
+var lat;
+var lon;
+var distance;
+
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+	lat = position.coords.latitude * 111000;
+	lon = position.coords.longitude * 111000;
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+
+function getLocation1() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition1, showError1);
+    } else { 
+        y.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition1(position) {
+	var t1 = Math.pow(position.coords.latitude * 111000 - lat,2);
+	var t2 = Math.pow(position.coords.longitude * 111000 - lon,2);
+	distance = Math.sqrt(t1 + t2);
+    y.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+	z.innerHTML = distance;
+}
+
+function showError1(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            y.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            y.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            y.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            y.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+
+</script>
+
+    
+
+
+</body>
+</html>

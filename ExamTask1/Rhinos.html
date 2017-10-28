@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+    <title> This is the first Mobile Computing task </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+   
+<h1> Rhinos </h1>
+
+<h2> White Rhino </h2>
+<h2> Black Rhino </h2>
+<h2> Indian Rhino </h2>
+<h2> Sumatran Rhino </h2>
+<h2> Javan Rhino </h2>
+
+<h2> Comparison Table </h2>
+
+<div class="outer">
+  <div class="inner">
+    <table align="left">
+        <tr>
+          <th class=fix>Rhino species</th>
+          <th>White</th>
+          <th>Black</th>
+          <th>Indian</th>
+          <th>Sumatran</th>
+          <th>Javan</th>
+        </tr>
+        <tr>
+          <th class=fix>Population</th>
+          <td>20000</td>
+          <td>5000</td>
+          <td>3500</td>
+          <td>100</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <th class=fix>Habitat</th>
+          <td>Southern Africa</td>
+          <td>Eastern and Southern Africa</td>
+          <td>Northeast India and Nepal</td>
+          <td>Sumatra and Borneo, Indonesia</td>
+          <td>Java, Indonesia</td>
+        </tr>
+    </table>
+  </div>
+</div>
+
+<button onclick="getLocation()">Get initial location</button>
+<p id="geoloc">Geolocation not available.</p>
+
+<button onclick="calcDistance()">Get distance to initial location</button>
+<p id="geoloc2">Geolocation not available.</p>
+
+<p id="dist">Distance not detected yet. </p>
+
+<div class="outer">
+	<div class="inner">
+		<table>
+			<tr>
+				<th class=fix>Rhino species</th>
+				<th>White</th>
+				<th>Black</th>
+				<th>Indian</th>
+				<th>Sumatran</th>
+				<th>Javan</th>
+			</tr>
+			<tr>
+				<th class=fix>Distance as the crow flies in km</th>
+				<td><p id="wdist">Distance not detected yet. </p></td>
+				<td><p id="bdist">Distance not detected yet. </p></td>
+				<td><p id="idist">Distance not detected yet. </p></td>
+				<td><p id="sdist">Distance not detected yet. </p></td>
+				<td><p id="jdist">Distance not detected yet. </p></td>
+			</tr>
+		</table>
+	</div>
+</div>
+<img src="Image/Rhinosizes.png" width="800" height="400" alt="The size of the five rhino species is shown. The order from largest to smallest is Indian, White, Black, Javan and lastly Sumatran." title="Comparison of the sizes of the five rhino species">
+
+
+
+<script>
+
+var x = document.getElementById("geoloc");
+var y = document.getElementById("dist");
+
+var wd = document.getElementById("wdist");
+var bd = document.getElementById("bdist");
+var id = document.getElementById("idist");
+var sd = document.getElementById("sdist");
+var jd = document.getElementById("jdist");
+
+var lat;
+var lon;
+
+var wdistance;
+var bdistance;
+var idistance;
+var sdistance;
+var jdistance;
+
+var wlat = -24.003813 * Math.PI / 180;
+var wlon = 31.523483 * Math.PI / 180;
+
+var blat = -1.522039 * Math.PI / 180;
+var blon = 35.337010 * Math.PI / 180;
+
+var ilat = 26.604285 * Math.PI / 180;
+var ilon = 93.388778 * Math.PI / 180;
+
+var slat = -4.919436 * Math.PI / 180;
+var slon = 105.753611 * Math.PI / 180;
+
+var jlat = -6.784571 * Math.PI / 180;
+var jlon = 105.380081 * Math.PI / 180;
+
+var r = 6371;
+
+
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+	lat = position.coords.latitude * Math.PI / 180 /** 111000*/;
+	lon = position.coords.longitude * Math.PI / 180 /** 111000*/;
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+function distance(lat1,lon1,lat2,lon2) {
+	var dlat = (lat2 - lat1)/2;
+	var dlon = (lon2 - lon1)/2;
+	
+	var temp = Math.pow(Math.sin(dlat), 2) + Math.cos(lat1) * 
+		Math.cos(lat2) * Math.pow(Math.sin(dlon), 2);
+
+	return 2 * r * Math.asin(Math.sqrt(temp));
+	/*
+	Math.pow(Math.sin((lat2 - lat1)/2, 2)) + Math.cos(lat1) * 
+		Math.cos(lat2) * Math.pow(Math.sin((lon2 - lon1)/2, 2))
+	)); */
+}
+
+function calcDistance() {
+/*	var t1 = Math.pow(lat - wlat,2);
+	var t2 = Math.pow(lon - wlon,2);
+	wdistance = Math.sqrt(t1 + t2) * 113.20;
+	
+	t1 = Math.pow(lat - blat,2);
+	t2 = Math.pow(lon - blon,2);
+	bdistance = Math.sqrt(t1 + t2) * 113.20;
+	
+	t1 = Math.pow(lat - ilat,2);
+	t2 = Math.pow(lon - ilon,2);
+	idistance = Math.sqrt(t1 + t2) * 113.20;
+	
+	t1 = Math.pow(lat - slat,2);
+	t2 = Math.pow(lon - slon,2);
+	sdistance = Math.sqrt(t1 + t2) * 113.20;
+	
+	t1 = Math.pow(lat - jlat,2);
+	t2 = Math.pow(lon - jlon,2);
+	jdistance = Math.sqrt(t1 + t2) * 113.20;
+*/
+	wdistance = distance(lat,wlat,lon,wlon);
+	bdistance = distance(lat,blat,lon,blon);
+	idistance = distance(lat,ilat,lon,ilon);
+	sdistance = distance(lat,slat,lon,slon);
+	jdistance = distance(lat,jlat,lon,jlon);
+	
+	
+	
+	
+	y.innerHTML = "Distances: " + wdistance + " " + bdistance + " " + idistance + " " + sdistance + " " + jdistance + " " ;
+	wd.innerHTML = wdistance.toFixed(2);
+	bd.innerHTML = bdistance.toFixed(2);
+	id.innerHTML = idistance.toFixed(2);
+	sd.innerHTML = sdistance.toFixed(2);
+	jd.innerHTML = jdistance.toFixed(2);
+	
+}
+
+
+</script>
+
+    
+
+
+</body>
+</html>
