@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
     <title> This is the first Mobile Computing task </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -49,15 +50,16 @@
     </table>
   </div>
 </div>
-<!--
+
 <button onclick="getLocation()">Get initial location</button>
+
 <p id="geoloc">Geolocation not available.</p>
--->
-<button onclick="calcDistance()">Get distance to initial location</button>
-<p id="geoloc2">Geolocation not available.</p>
 
+<button id="calc" onclick="calcDistance()">Get distance to initial location</button>
+
+<!--
 <p id="dist">Distance not detected yet. </p>
-
+-->
 <div class="outer">
 	<div class="inner">
 		<table>
@@ -162,53 +164,27 @@ function distance(lat1,lon1,lat2,lon2) {
 		Math.cos(lat2) * Math.pow(Math.sin(dlon), 2);
 
 	return 2 * r * Math.asin(Math.sqrt(temp));
-	/*
-	Math.pow(Math.sin((lat2 - lat1)/2, 2)) + Math.cos(lat1) * 
-		Math.cos(lat2) * Math.pow(Math.sin((lon2 - lon1)/2, 2))
-	)); */
 }
 
 function calcDistance() {
-/*	var t1 = Math.pow(lat - wlat,2);
-	var t2 = Math.pow(lon - wlon,2);
-	wdistance = Math.sqrt(t1 + t2) * 113.20;
 	
-	t1 = Math.pow(lat - blat,2);
-	t2 = Math.pow(lon - blon,2);
-	bdistance = Math.sqrt(t1 + t2) * 113.20;
-	
-	t1 = Math.pow(lat - ilat,2);
-	t2 = Math.pow(lon - ilon,2);
-	idistance = Math.sqrt(t1 + t2) * 113.20;
-	
-	t1 = Math.pow(lat - slat,2);
-	t2 = Math.pow(lon - slon,2);
-	sdistance = Math.sqrt(t1 + t2) * 113.20;
-	
-	t1 = Math.pow(lat - jlat,2);
-	t2 = Math.pow(lon - jlon,2);
-	jdistance = Math.sqrt(t1 + t2) * 113.20;
-*/
-	getLocation();
 	wdistance = distance(lat,wlat,lon,wlon);
 	bdistance = distance(lat,blat,lon,blon);
 	idistance = distance(lat,ilat,lon,ilon);
 	sdistance = distance(lat,slat,lon,slon);
 	jdistance = distance(lat,jlat,lon,jlon);
-	
-	
-	
-	
+
+	/*
 	y.innerHTML = "Distances: " + wdistance + " " + bdistance + " " + idistance + " " + sdistance + " " + jdistance + " " ;
+	*/
 	
 	wd.innerHTML = wdistance.toFixed(2);
 	bd.innerHTML = bdistance.toFixed(2);
 	id.innerHTML = idistance.toFixed(2);
 	sd.innerHTML = sdistance.toFixed(2);
 	jd.innerHTML = jdistance.toFixed(2);
-	
-}
 
+}
 
 </script>
 
