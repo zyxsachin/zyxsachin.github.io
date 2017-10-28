@@ -49,10 +49,10 @@
     </table>
   </div>
 </div>
-
+<!--
 <button onclick="getLocation()">Get initial location</button>
 <p id="geoloc">Geolocation not available.</p>
-
+-->
 <button onclick="calcDistance()">Get distance to initial location</button>
 <p id="geoloc2">Geolocation not available.</p>
 
@@ -189,6 +189,7 @@ function calcDistance() {
 	t2 = Math.pow(lon - jlon,2);
 	jdistance = Math.sqrt(t1 + t2) * 113.20;
 */
+	getLocation();
 	wdistance = distance(lat,wlat,lon,wlon);
 	bdistance = distance(lat,blat,lon,blon);
 	idistance = distance(lat,ilat,lon,ilon);
@@ -199,6 +200,7 @@ function calcDistance() {
 	
 	
 	y.innerHTML = "Distances: " + wdistance + " " + bdistance + " " + idistance + " " + sdistance + " " + jdistance + " " ;
+	
 	wd.innerHTML = wdistance.toFixed(2);
 	bd.innerHTML = bdistance.toFixed(2);
 	id.innerHTML = idistance.toFixed(2);
