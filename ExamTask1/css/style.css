@@ -3,6 +3,10 @@ html *
    font-family: Arial !important;
 }
 
+body {
+	background-color: beige;
+}
+
 table {
   table-layout: fixed; 
   border-spacing: 0px;
@@ -24,6 +28,10 @@ td, th {
   padding: 5px;
   max-width: 1000px;
 } 
+
+.content {
+	display: none;
+}
 
 .fix {
   position: absolute;
