@@ -10,21 +10,36 @@
 	
 	<p align="left">
 	
-	<a href="javascript:void(0)" onclick="selectSection(0);">About rhinos</a> | 
-	<a href="javascript:void(0)" onclick="selectSection(1);">Rhino species</a> |  
-	<a href="javascript:void(0)" onclick="selectSection(2);">Location of rhino species</a> |
-	<a href="javascript:void(0)" onclick="selectSection(3);">Poaching</a> |
-	<a href="javascript:void(0)" onclick="selectSection(4);">Images</a>
+
 
 </p>
 </head>
 
 <body>
    
-<h1> Rhinos </h1>
-<h4> by Sachin Rajgopal </h4>
+
+
+	
+	<nav>
+		<a href="javascript:void(0)" id="a" onclick="selectSection(0);" onmouseover="changeColor(a);" class="menu">About rhinos</a> 
+		<a href="javascript:void(0)" id="b" onclick="selectSection(1);" onmouseover="changeColor(b);" class="menu">Rhino species</a> 
+		<a href="javascript:void(0)" id="c" onclick="selectSection(2);" onmouseover="changeColor(c);" class="menu">Location of rhino species</a>
+		<a href="javascript:void(0)" id="d" onclick="selectSection(3);" onmouseover="changeColor(d);" class="menu">Poaching</a>
+		<a href="javascript:void(0)" id="e" onclick="selectSection(4);" onmouseover="changeColor(e);" class="menu">Images</a>
+		
+	</nav>	
+
+	<header>
+		<h1 class="left"> Rhinos </h1>
+		<h5 class="right"> by Sachin Rajgopal </h5>
+		
+	</header>
+	</div>
+	
+	
 <section id="about">
 	<h2> About Rhinos </h2>
+	<img src="Image/IndianRhinoCover.jpg" width="800"  alt="Raspberry Pi Logo">
 </section>
 
 <section id="species" class="content">
@@ -81,14 +96,22 @@
 			  <td>Sumatra and Borneo, Indonesia</td>
 			  <td>Java, Indonesia</td>
 			</tr>
+			<tr>
+			  <th class=fix>Conservation Status</th>
+			  <td></td>
+			  <td></td>
+			  <td></td>
+			  <td></td>
+			  <td></td>
+			</tr>
 		</table>
 	  </div>
 	</div>
 </section>
 <section id="location" class="content">
-	<button onclick="getLocation()">Get initial location</button>
+	<button onclick="getLocation();")">Get initial location</button>
 
-	<p id="geoloc">Geolocation not available.</p>
+	<p id="geoloc">Geolocation not activated yet.</p>
 
 	<button id="calc" onclick="calcDistance()">Get distance to initial location</button>
 
@@ -107,7 +130,7 @@
 					<th>Javan</th>
 				</tr>
 				<tr>
-					<th class=fix>Distance as the crow flies in km</th>
+					<th class=fix><br>Distance as the crow flies in km</br></th>
 					<td><p id="wdist">Distance not detected yet. </p></td>
 					<td><p id="bdist">Distance not detected yet. </p></td>
 					<td><p id="idist">Distance not detected yet. </p></td>
@@ -186,7 +209,16 @@
 </section>
 
 
+<script type="text/javascript" language="javascript">
+var x = document.getElementById("geoloc");
+var y = document.getElementById("dist");
+var wd = document.getElementById("wdist");
+var bd = document.getElementById("bdist");
+var id = document.getElementById("idist");
+var sd = document.getElementById("sdist");
+var jd = document.getElementById("jdist");
 
+</script>
     
 
 

@@ -1,5 +1,6 @@
 
 
+/*
 var x = document.getElementById("geoloc");
 var y = document.getElementById("dist");
 
@@ -8,6 +9,7 @@ var bd = document.getElementById("bdist");
 var id = document.getElementById("idist");
 var sd = document.getElementById("sdist");
 var jd = document.getElementById("jdist");
+*/
 
 var lat;
 var lon;
@@ -34,6 +36,23 @@ var jlat = -6.784571 * Math.PI / 180;
 var jlon = 105.380081 * Math.PI / 180;
 
 var r = 6371;
+
+function changeColor(linkId) {
+				
+	// Then show the section with the ID the user selected from the menu.
+	if (linkID == a) {
+		document.getElementById("a").style.color="red";
+	} else if (linkID == b) {
+		document.getElementById("species").style.display='block';
+	} else if (linkID == c) {
+		document.getElementById("location").style.display='block';
+	} else if (linkID == d) {
+		document.getElementById("poaching").style.display='block';
+	} else if (linkID == e) {
+		document.getElementById("images").style.display='block';
+	}
+	
+}
 
 function selectSection(linkID) {
 	// First, hide all sections.
