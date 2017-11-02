@@ -4,22 +4,30 @@ html *
 }
 
 head {
-	
+
 	background-color: aquamarine;
 }
 
 
 header {
-	height: 100px;
+
+	height: 80px;
 	width: 100%;
+	max-width:1000px;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: aquamarine;
 	text-align: left;
+	margin-bottom:-10px;
 }
 
 nav {
-    float: top;
+	background-color: beige;
+	float: top;
 	font-size:0px;
+	margin-bottom:-10px;
 }
+
 
 
 a:link {
@@ -51,6 +59,7 @@ body {
 	padding: 5px;
 	background-color: beige;
 	border: 1px solid #ccc;
+
 }
 
 
@@ -61,7 +70,7 @@ table {
   *margin-left: -100px;/*ie7*/
 }
 
-td, th {
+td,  th {
   text-align: left;
   vertical-align: top;
   border-top: 1px solid #ccc;
@@ -71,10 +80,17 @@ td, th {
   width:150px;
 }
 
+
 button {
-	margin:10px;
+
+	margin-top:-10px;
+	margin-bottom:10px;
 }
 
+.fi {
+	margin-top:30px;
+	margin-bottom:-20px;
+}
 
 .menu {
 
@@ -83,7 +99,7 @@ button {
 	border: 2px solid#6495ED; /* CornflowerBlue */
 	display:inline-flex;
     width:250px;
-	height:100px;
+	height:60px;
 	font-size:24px;
 
 
@@ -100,23 +116,54 @@ button {
 
 .responsive {
 
-  padding: 5px;
-  max-width: 1000px;
+	padding: 5px;
+	max-width: 1000px;
 } 
+
+.trivia {
+	padding: 5px;
+	max-width: 1000px;
+	
+}
+
+.triv {
+	color:cornflowerblue;
+	
+}
+
+
 
 .content {
 	display: none;
+}
+
+.mapInit {
+
+	max-width:800px;
+
+	max-height:600px;
+
+}
+
+.map {
+	display: none;
+
+	max-width:800px;
+
+	max-height:600px;
+
 }
 
 .fix {
   position: absolute;
   *position: relative; /*ie7*/
   margin-left: -150px;
-  width:150px;
+  width:128px;
   border-style:hidden;
-
+  border-right: 1px solid #ccc;	
   border-top: 1px solid #ccc;
-  padding:10px;
+  border-left: 1px solid #ccc;	
+  padding:-10px;
 
 }
 .outer {/*position:rabsolute*/}

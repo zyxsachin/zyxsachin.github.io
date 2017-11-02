@@ -37,6 +37,7 @@ var jlon = 105.380081 * Math.PI / 180;
 
 var r = 6371;
 
+
 function changeColor(linkId) {
 				
 	// Then show the section with the ID the user selected from the menu.
