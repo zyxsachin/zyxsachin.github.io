@@ -38,6 +38,8 @@ var jlon = 105.380081 * Math.PI / 180;
 
 var r = 6371;
 
+var lati;
+var longi;
 
 function changeColor(linkId) {
 				
@@ -58,15 +60,15 @@ function changeColor(linkId) {
 
 function selectSection(linkID) {
 	// First, hide all sections.
-	document.getElementById("about").style.display='none';
+	document.getElementById("quickPeek").style.display='none';
 	document.getElementById("species").style.display='none';
 	document.getElementById("location").style.display='none';
 	document.getElementById("poaching").style.display='none';
-	document.getElementById("images").style.display='none';
+	document.getElementById("about").style.display='none';
 				
 	// Then show the section with the ID the user selected from the menu.
 	if (linkID == 0) {
-		document.getElementById("about").style.display='block';
+		document.getElementById("quickPeek").style.display='block';
 	} else if (linkID == 1) {
 		document.getElementById("species").style.display='block';
 	} else if (linkID == 2) {
@@ -74,7 +76,7 @@ function selectSection(linkID) {
 	} else if (linkID == 3) {
 		document.getElementById("poaching").style.display='block';
 	} else if (linkID == 4) {
-		document.getElementById("images").style.display='block';
+		document.getElementById("about").style.display='block';
 	}
 }
 
@@ -85,7 +87,7 @@ function selectLocation(linkID) {
 	document.getElementById("indiaLocation").style.display='none';
 	document.getElementById("sumatraLocation").style.display='none';
 	document.getElementById("javaLocation").style.display='none';
-	document.getElementById("mapholder").style.display='none';
+	document.getElementById("yourLocation").style.display='none';
 				
 	// Then show the section with the ID the user selected from the menu.
 	if (linkID == 0) {
@@ -99,11 +101,12 @@ function selectLocation(linkID) {
 	} else if (linkID == 4) {
 		document.getElementById("javaLocation").style.display='block';
 	} else if (linkID == 5) {
-			document.getElementById("mapholder").style.display='block';
-		if (latlon == null) {
-			x.innerHTML = "Geolocation is not supported by this browser.";
+			// document.getElementById("yourLocation").style.display='block';
+		if (lat == null || lon == null) {
+			x.innerHTML = "Geolocation not used yet.";
 		} else {
-			
+			document.getElementById("yourLocation").style.display='block';
+			document.getElementById("yourLocation").src ="https://www.google.com/maps/embed/v1/place?key=AIzaSyAZyyisWD6opTg7vkOCUs0ODo3auLqosFU&q=" + lati + "," + longi + "&zoom=4";
 		}
 	}
 }
@@ -121,24 +124,19 @@ function getLocation() {
 function showPosition(position) {
 	lat = position.coords.latitude * Math.PI / 180 /** 111000*/;
 	lon = position.coords.longitude * Math.PI / 180 /** 111000*/;
+	lati = position.coords.latitude;
+	longi = position.coords.longitude;
 	// latlon = lat + "," + lon;
     x.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;	
 	
-	var latlon = new google.maps.LatLng(lat, lon)
-	var mapholder = document.getElementById('mapholder')
-	mapholder.style.height = '250px';
-	mapholder.style.width = '500px';
-
-	var myOptions = {
-	center:latlon,zoom:4,
-	mapTypeId:google.maps.MapTypeId.ROADMAP,
-	mapTypeControl:false,
-	navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
-	}
-	
-	var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
-	var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+	document.getElementById("whiteLocation").style.display='none';
+	document.getElementById("blackLocation").style.display='none';
+	document.getElementById("indiaLocation").style.display='none';
+	document.getElementById("sumatraLocation").style.display='none';
+	document.getElementById("javaLocation").style.display='none';
+	document.getElementById("yourLocation").style.display='none';
+	document.getElementById("yourLocation").style.display='block';
 }
 
 function showError(error) {

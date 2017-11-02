@@ -280,6 +280,12 @@ button {
 	#mobileMenu {
 		display:inline;
 	}
+	
+	.img {
+		float:top;
+
+		max-width: 100%
+	}
 }
 @media screen and (min-width: 1000px) {*/
 	#desktopMenu {
@@ -287,5 +293,11 @@ button {
 	}
 	#mobileMenu {
 		display:none;
+	}
+	
+	.img {
+		float:right;
+		width : 500px;
+		max-width: 100%;
 	}
 }
