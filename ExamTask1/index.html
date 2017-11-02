@@ -16,11 +16,15 @@
 </p>
 </head>
 
+
+
+
+<body onload="selectFittingCSS();">
 <div class="header">
 
 	<nav>
 	
-		<a href="javascript:void(0)" id="a" onclick="selectSection(0);" class="menu">About rhinos</a> 
+		<a href="javascript:void(0)" id="a" onclick="selectSection(0);" class="menu">Quick peek</a> 
 		<a href="javascript:void(0)" id="b" onclick="selectSection(1);" class="menu">Rhino species</a> 
 		<a href="javascript:void(0)" id="c" onclick="selectSection(2);" class="menu">Location of rhinos</a>
 		<a href="javascript:void(0)" id="d" onclick="selectSection(3);" class="menu">Poaching</a>
@@ -35,18 +39,89 @@
 	</header>
 
 	
-</div>
+</div>	
 
+<!-- <div class="w3-sidebar w3-bar-block" style="display:none" id="mySidebar"> -->
+  <!-- <button onclick="w3_close()" class="w3-bar-item w3-button w3-large">Close &times;</button> -->
+  <!-- <a href="#" class="w3-bar-item w3-button">Link 1</a> -->
+  <!-- <a href="#" class="w3-bar-item w3-button">Link 2</a> -->
+  <!-- <a href="#" class="w3-bar-item w3-button">Link 3</a> -->
+<!-- </div> -->
 
-<body>
-	
+<!-- <div class="w3-teal"> -->
+  <!-- <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button> -->
+  <!-- <div class="w3-container"> -->
+    <!-- <h1>My Page</h1> -->
+  <!-- </div> -->
+<!-- </div> -->
 
-
+<!-- <script> -->
+<!-- function w3_open() { -->
+    <!-- document.getElementById("mySidebar").style.width = "100%"; -->
+    <!-- document.getElementById("mySidebar").style.display = "block"; -->
+<!-- } -->
+<!-- function w3_close() { -->
+    <!-- document.getElementById("mySidebar").style.display = "none"; -->
+<!-- } -->
+<!-- </script> -->
 	
 		
 	<section id="about">
 		<h2> About Rhinos </h2>
-		<img src="Image/IndianRhinoCover.jpg" width="800"  alt="Indian rhino standing">
+		<p class="responsive"> 
+		Rhinos are the second largest land animals after elephants. Here is some info 
+		</p>
+		<!-- <img src="Image/IndianRhinoCover.jpg" width="800" class="responsive"  alt="Indian rhino standing"> -->
+		
+		<h2> Comparison Table </h2>
+
+
+		<div class="outer">
+		  <div class="inner">
+			<table align="left" class="t1">
+				<tr>
+				  <th class="fix">Rhino species</th>
+				  <th>White</th>
+				  <th>Black</th>
+				  <th>Indian</th>
+				  <th>Sumatran</th>
+				  <th>Javan</th>
+				</tr>
+				<tr>
+				  <th class="fix">Population</th>
+				  <td>20000</td>
+				  <td>5000</td>
+				  <td>3500</td>
+				  <td>100</td>
+				  <td>60</td>
+				</tr>
+				<tr>
+				  <th class="fix" height="80">Habitat</th>
+				  <td>Southern Africa</td>
+				  <td>Eastern and Southern Africa</td>
+				  <td>Northeast India and Nepal</td>
+				  <td>Sumatra and Borneo, Indonesia</td>
+				  <td>Java, Indonesia</td>
+				</tr>
+				<tr>
+				  <th class="fix">Conservation Status</th>
+				  <td>Not threatened</td>
+				  <td>Critically endangered</td>
+				  <td>Vulnerable</td>
+				  <td>Critically endangered</td>
+				  <td>Critically endangered</td>
+				</tr>
+				<tr>
+				  <th class="fix">Number of horns</th>
+				  <td>2</td>
+				  <td>2</td>
+				  <td>1</td>
+				  <td>2</td>
+				  <td>1</td>
+				</tr>
+			</table>
+		  </div>
+		</div>
 		<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>		
 	</section>
 
@@ -112,7 +187,7 @@
 		  <li class="trivia" style="list-style-type:circle">There was and is still to this day very little known about Javan rhinos. 
 		  The last Javan rhino is captivity was displayed as Indian rhino over a century ago.</li>
 		  <li class="trivia" style="list-style-type:circle">	The Vietnamese population was presumed to have become extinct due to the Vietname War, 
-		  but they somehow survived and were discovered again in 1988. Unfortunately the last rhino in Vietname died in 2010.</li>
+		  but they somehow survived and were discovered again in 1988. Unfortunately the last rhino in Vietnam died in 2010.</li>
 		</ul>
 		<p class="responsive"> 
 		
@@ -123,47 +198,6 @@
 		</p>
 		
 		
-		<h2> Comparison Table </h2>
-
-
-		<div class="outer">
-		  <div class="inner">
-			<table align="left" class="t1">
-				<tr>
-				  <th class="fix">Rhino species</th>
-				  <th>White</th>
-				  <th>Black</th>
-				  <th>Indian</th>
-				  <th>Sumatran</th>
-				  <th>Javan</th>
-				</tr>
-				<tr>
-				  <th class="fix">Population</th>
-				  <td>20000</td>
-				  <td>5000</td>
-				  <td>3500</td>
-				  <td>100</td>
-				  <td>60</td>
-				</tr>
-				<tr>
-				  <th class="fix" height="80">Habitat</th>
-				  <td>Southern Africa</td>
-				  <td>Eastern and Southern Africa</td>
-				  <td>Northeast India and Nepal</td>
-				  <td>Sumatra and Borneo, Indonesia</td>
-				  <td>Java, Indonesia</td>
-				</tr>
-				<tr>
-				  <th class="fix">Conservation Status</th>
-				  <td>Not threatened</td>
-				  <td>Critically endangered</td>
-				  <td>Vulnerable</td>
-				  <td>Critically endangered</td>
-				  <td>Critically endangered</td>
-				</tr>
-			</table>
-		  </div>
-		</div>
 	</section>
 	<section id="location" class="content">
 		<button onclick="getLocation();" class="fi")">Get initial location</button>
@@ -217,7 +251,7 @@
 		
 		<iframe
 			id="blackLocation"
-			wwidth="100%"
+			width="100%"
 			height="450"
 			frameborder="0" style="border:0"
 			class="map"

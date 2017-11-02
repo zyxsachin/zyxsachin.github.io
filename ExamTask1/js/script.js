@@ -162,3 +162,46 @@ function calcDistance() {
 
 }
 
+// Check if user is on a mobile device and handle appropriately.
+function selectFittingCSS() {
+	// Prepare to dynamically load CSS.
+	var fileref = document.createElement("link");
+	fileref.setAttribute("rel", "stylesheet");
+	fileref.setAttribute("type", "text/css");
+				
+	// Sniff the user agent and match it with a regex. It's better to use libraries like "wurfl.io"
+	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		// Check for preferences-cookie.
+		var preference = getCookie("use_mobile");
+		if (preference == "") {
+			// User is on mobile device and preferece cookie is not set. Ask if they want to use the mobile version.
+			var useMobile = confirm("Hey there! You are using a mobile device. Do you want to be redirected to the mobile version of this website?");
+			if (useMobile == true) {
+				// User is on a mobile device and wants to use the mobile version.
+				fileref.setAttribute("href", "css/style_mobile.css");
+				// Remember choice.
+				document.cookie="use_mobile=yes";
+			} else {
+				// User is on a mobile device but wants to use the regular version.
+				fileref.setAttribute("href", "css/style.css");
+				// Remember choice.
+				document.cookie="use_mobile=no";
+			}
+		} else if (preference == "yes") {
+			// Preference cookie set to "yes". Use mobile version.
+			fileref.setAttribute("href", "css/style_mobile.css");
+		} else {
+			// Preference cookie set to "no". Use regular version.
+			fileref.setAttribute("href", "css/style.css");					
+		}
+	} else {
+		// User is not on a mobile device. Choose normal stylesheet.
+		fileref.setAttribute("href", "css/style.css");
+				
+		// Don't show preferences button.
+		document.getElementById("preferenceButton").style.display='none';
+	}
+			
+	// Load CSS.
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+}
