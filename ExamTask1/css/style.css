@@ -222,7 +222,7 @@ button {
 }
 
 
-@media screen and (min-width: 500px) {*/
+@media screen and (max-width: 1000px) {
 	 
 	#desktopMenu {
 		display:none;
@@ -231,10 +231,11 @@ button {
 		display:inline;
 	}
 }
-	
+@media screen and (min-width: 1000px) {*/
 	#desktopMenu {
 		display:inline;
 	}
 	#mobileMenu {
 		display:none;
 	}
+}
