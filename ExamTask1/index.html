@@ -31,10 +31,10 @@
 
   <!-- </div> -->
 <!-- </div>	 -->
-		<span id="mobileMenu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-		<h1 class="left" style="float:left"> Rhinos </h1>
-		<h5 class="right"> by Sachin Rajgopal </h5>
 		
+		<h1 class="left" > Rhinos </h1>
+		<h5 class="right"> by Sachin Rajgopal </h5>
+		<span  class="right" id="mobileMenu" style="font-size:30px;cursor:pointer;align:right;float:right;" onclick="openNav()">&#9776;</span>
 	</header>
 	
 	<nav>
@@ -58,13 +58,13 @@
 		<!-- </div> -->
 		
 		 <div id="mySidenav" class="sidenav">
-			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			  <a class="sideBarMenu" href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close sidebar<!--&times;--></a>
 			  
-				<a href="javascript:void(0)" id="a" onclick="selectSection(0); closeNav();" onclick="closeNav()">Quick peek</a> 
-				<a href="javascript:void(0)" id="b" onclick="selectSection(1); closeNav();" onclick="closeNav()">Rhino species</a> 
-				<a href="javascript:void(0)" id="c" onclick="selectSection(2); closeNav();" onclick="closeNav()">Location of rhinos</a>
-				<a href="javascript:void(0)" id="d" onclick="selectSection(3); closeNav();" onclick="closeNav()">Poaching</a>
-				<a href="javascript:void(0)" id="e" onclick="selectSection(4); closeNav();" onclick="closeNav()">Images</a>
+				<a class="sideBarMenu" href="javascript:void(0)" id="a" onclick="selectSection(0); closeNav();" >Quick peek</a> 
+				<a class="sideBarMenu" href="javascript:void(0)" id="b" onclick="selectSection(1); closeNav();" >Rhino species</a> 
+				<a class="sideBarMenu" href="javascript:void(0)" id="c" onclick="selectSection(2); closeNav();" >Rhino location</a>
+				<a class="sideBarMenu" href="javascript:void(0)" id="d" onclick="selectSection(3); closeNav();" >Poaching</a>
+				<a class="sideBarMenu" href="javascript:void(0)" id="e" onclick="selectSection(4); closeNav();" >Images</a>
 		</div>
 
 <!-- Use any element to open the sidenav -->
@@ -79,7 +79,7 @@
 <script>
 	/* Set the width of the side navigation to 250px */
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.width = "50%";
 }
 
 /* Set the width of the side navigation to 0 */
