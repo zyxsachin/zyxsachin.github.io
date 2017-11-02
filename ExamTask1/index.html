@@ -60,11 +60,11 @@
 		 <div id="mySidenav" class="sidenav">
 			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			  
-				<a href="javascript:void(0)" id="a" onclick="selectSection(0);" >Quick peek</a> 
-				<a href="javascript:void(0)" id="b" onclick="selectSection(1);" >Rhino species</a> 
-				<a href="javascript:void(0)" id="c" onclick="selectSection(2);" >Location of rhinos</a>
-				<a href="javascript:void(0)" id="d" onclick="selectSection(3);" >Poaching</a>
-				<a href="javascript:void(0)" id="e" onclick="selectSection(4);" >Images</a>
+				<a href="javascript:void(0)" id="a" onclick="selectSection(0); closeNav();" onclick="closeNav()">Quick peek</a> 
+				<a href="javascript:void(0)" id="b" onclick="selectSection(1); closeNav();" onclick="closeNav()">Rhino species</a> 
+				<a href="javascript:void(0)" id="c" onclick="selectSection(2); closeNav();" onclick="closeNav()">Location of rhinos</a>
+				<a href="javascript:void(0)" id="d" onclick="selectSection(3); closeNav();" onclick="closeNav()">Poaching</a>
+				<a href="javascript:void(0)" id="e" onclick="selectSection(4); closeNav();" onclick="closeNav()">Images</a>
 		</div>
 
 <!-- Use any element to open the sidenav -->
@@ -72,7 +72,7 @@
 
 <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
 <div id="main">
-  ...
+  
 </div> 
 
 	</nav>

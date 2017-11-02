@@ -175,7 +175,6 @@ button {
 }
 
 .sidenav {
-		display: block;
 	height: 100%; /* 100% Full-height */
 	width: 0; /* 0 width - change this with JavaScript */
 	position: fixed; /* Stay in place */
@@ -223,19 +222,19 @@ button {
 }
 
 
-/* @media screen and (min-width: 500px) {*/ */
+@media screen and (min-width: 500px) {*/
 	 
-	/* #desktopMenu { */
-		/* display:none; */
-	/* } */
-	/* #mobileMenu { */
-		/* display:inline; */
-	/* } */
-/* } */
+	#desktopMenu {
+		display:none;
+	}
+	#mobileMenu {
+		display:inline;
+	}
+}
 	
-	/* #desktopMenu { */
-		/* display:inline; */
-	/* } */
-	/* #mobileMenu { */
-		/* display:none; */
-	/* } */
+	#desktopMenu {
+		display:inline;
+	}
+	#mobileMenu {
+		display:none;
+	}
