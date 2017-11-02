@@ -222,7 +222,7 @@ button {
 	}
 
 @media screen and (max-width: 1000px) {
-	 /* The side navigation menu */
+	 
 	#desktopMenu {
 		display:none;
 	}
@@ -231,12 +231,9 @@ button {
 	}
 }
 	
-@media screen and (min-width: 1000px) {
-	 /* The side navigation menu */
 	#desktopMenu {
 		display:inline;
 	}
 	#mobileMenu {
 		display:none;
 	}
-}
