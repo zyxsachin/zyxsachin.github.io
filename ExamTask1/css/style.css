@@ -229,5 +229,14 @@ button {
 	#mobileMenu {
 		display:inline;
 	}
+}
 	
+@media screen and (min-width: 1000px) {
+	 /* The side navigation menu */
+	#desktopMenu {
+		display:inline;
+	}
+	#mobileMenu {
+		display:none;
+	}
 }
