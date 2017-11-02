@@ -48,9 +48,32 @@ a:hover {
 
 
 h1 {
-	
 	margin-bottom: -0.67em;
 }
+
+h2 {
+	padding: 5px;
+}
+
+h3 {
+	padding: 5px;
+}
+
+h4 {
+	padding: 5px;
+}
+
+
+h6 {
+	padding: 5px;
+}
+
+figure {
+	padding: 5px;
+}
+
+
+
 
 
 body {
@@ -72,14 +95,22 @@ table {
   *margin-left: -100px;/*ie7*/
 }
 
+tr {
+  height:40px;
+  max-height:40px;
+}
+
 td,  th {
   text-align: left;
   vertical-align: top;
-  border-top: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  /* border-top: 1px solid #ccc; */
+  /* border-left: 1px solid #ccc; */
+  /* border-right: 1px solid #ccc; */
+  border: 1px solid #ccc;
   padding:10px;
   width:150px;
+  height:40px;
+  max-height:40px;
 }
 
 
@@ -171,14 +202,17 @@ button {
 }
 
 .fix {
+	vertical-align: top;
+	text-align: left;
   position: absolute;
   *position: relative; /*ie7*/
   margin-left: -150px;
   width:128px;
-  border-style:hidden;
-  border-right: 1px solid #ccc;	
-  border-top: 1px solid #ccc;
-  border-left: 1px solid #ccc;	
+  /* border-style:hidden; */
+  border: 1px solid #ccc;
+  /* border-right: 1px solid #ccc;	 */
+  /* border-top: 1px solid #ccc; */
+  /* border-left: 1px solid #ccc;	 */
   padding:-10px;
 
 }

@@ -13,6 +13,7 @@ var jd = document.getElementById("jdist");
 
 var lat;
 var lon;
+var latlon;
 
 var wdistance;
 var bdistance;
@@ -84,6 +85,7 @@ function selectLocation(linkID) {
 	document.getElementById("indiaLocation").style.display='none';
 	document.getElementById("sumatraLocation").style.display='none';
 	document.getElementById("javaLocation").style.display='none';
+	document.getElementById("mapholder").style.display='none';
 				
 	// Then show the section with the ID the user selected from the menu.
 	if (linkID == 0) {
@@ -96,6 +98,13 @@ function selectLocation(linkID) {
 		document.getElementById("sumatraLocation").style.display='block';
 	} else if (linkID == 4) {
 		document.getElementById("javaLocation").style.display='block';
+	} else if (linkID == 5) {
+			document.getElementById("mapholder").style.display='block';
+		if (latlon == null) {
+			x.innerHTML = "Geolocation is not supported by this browser.";
+		} else {
+			
+		}
 	}
 }
 
@@ -112,8 +121,24 @@ function getLocation() {
 function showPosition(position) {
 	lat = position.coords.latitude * Math.PI / 180 /** 111000*/;
 	lon = position.coords.longitude * Math.PI / 180 /** 111000*/;
+	// latlon = lat + "," + lon;
     x.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;	
+	
+	var latlon = new google.maps.LatLng(lat, lon)
+	var mapholder = document.getElementById('mapholder')
+	mapholder.style.height = '250px';
+	mapholder.style.width = '500px';
+
+	var myOptions = {
+	center:latlon,zoom:4,
+	mapTypeId:google.maps.MapTypeId.ROADMAP,
+	mapTypeControl:false,
+	navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+	}
+	
+	var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+	var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
 }
 
 function showError(error) {
