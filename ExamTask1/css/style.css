@@ -220,7 +220,7 @@ button {
 		.sidenav {padding-top: 15px;}
 		.sidenav a {font-size: 18px;}
 	}
-
+	
 @media screen and (max-width: 1000px) {
 	 
 	#desktopMenu {
@@ -230,10 +230,4 @@ button {
 		display:inline;
 	}
 }
-	
-	#desktopMenu {
-		display:inline;
-	}
-	#mobileMenu {
-		display:none;
-	}
+
