@@ -266,6 +266,12 @@ button {
 	padding: 20px;
 }
 
+.cover {
+		max-width: 600px;
+		display: block;
+		margin: 0 auto;
+	}
+
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
 	.sidenav {padding-top: 15px;}
@@ -288,12 +294,7 @@ button {
 		max-width: 100%
 	}
 	
-	.cover {
-		max-width: 600px;
-		display: block;
-		margin: 0 auto;
-		
-	}
+	
 }
 @media screen and (min-width: 1000px) {*/
 	#desktopMenu {
@@ -309,9 +310,4 @@ button {
 		max-width: 100%;
 	}
 	
-	.cover {
-		max-width: 600px;
-		display: block;
-		margin: 0 auto;
-	}
 }
