@@ -267,7 +267,8 @@ button {
 }
 
 .cover {
-		max-width: 600px;
+		width: 600px;
+		max-width:100%;
 		display: block;
 		margin: auto;
 	}
