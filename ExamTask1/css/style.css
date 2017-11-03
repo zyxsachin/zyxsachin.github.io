@@ -1,7 +1,7 @@
 html *
 {
    font-family: Arial !important;
-   zoom: 100%;
+   /* zoom: 100%; */
 }
 
 head {
