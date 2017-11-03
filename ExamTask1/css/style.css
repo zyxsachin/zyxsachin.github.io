@@ -269,7 +269,7 @@ button {
 .cover {
 		max-width: 600px;
 		display: block;
-		margin: 0 auto;
+		margin: auto;
 	}
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
