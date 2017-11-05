@@ -127,8 +127,9 @@ function showPosition(position) {
 	lati = position.coords.latitude;
 	longi = position.coords.longitude;
 	// latlon = lat + "," + lon;
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;	
+    x.innerHTML = "Latitude: " + position.coords.latitude.toFixed(5) + 
+    "<br>Longitude: " + position.coords.longitude.toFixed(5);;	
+	calcDistance();
 
 }
 
@@ -177,3 +178,5 @@ function calcDistance() {
 	jd.innerHTML = jdistance.toFixed(2);
 
 }
+
+
