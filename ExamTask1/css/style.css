@@ -44,7 +44,10 @@ a:hover {
     text-decoration: none;
 }
 
-
+a:active{
+	 color: green;
+	
+}
 
 h1 {
 	margin-bottom: -0.67em;

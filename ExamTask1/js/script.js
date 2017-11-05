@@ -24,8 +24,8 @@ var jdistance;
 var wlat = -24.003813 * Math.PI / 180;
 var wlon = 31.523483 * Math.PI / 180;
 
-var blat = -1.522039 * Math.PI / 180;
-var blon = 35.337010 * Math.PI / 180;
+var blat = -18.855611 * Math.PI / 180;
+var blon = 16.329277 * Math.PI / 180;
 
 var ilat = 26.604285 * Math.PI / 180;
 var ilon = 93.388778 * Math.PI / 180;
@@ -44,16 +44,16 @@ var longi;
 function changeColor(linkId) {
 				
 	// Then show the section with the ID the user selected from the menu.
-	if (linkID == a) {
-		document.getElementById("a").style.color="red";
-	} else if (linkID == b) {
-		document.getElementById("species").style.display='block';
-	} else if (linkID == c) {
-		document.getElementById("location").style.display='block';
-	} else if (linkID == d) {
-		document.getElementById("poaching").style.display='block';
-	} else if (linkID == e) {
-		document.getElementById("images").style.display='block';
+	if (linkID == 0) {
+		document.getElementById("a1").style.color="red";
+	} else if (linkID == 1) {
+		document.getElementById("b1").style.color="red";
+	} else if (linkID == 2) {
+		document.getElementById("c1").style.color="red";
+	} else if (linkID == 3) {
+		document.getElementById("d1").style.color="red";
+	} else if (linkID == 4) {
+		document.getElementById("e1").style.color="red";
 	}
 	
 }
@@ -129,14 +129,7 @@ function showPosition(position) {
 	// latlon = lat + "," + lon;
     x.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;	
-	
-	document.getElementById("whiteLocation").style.display='none';
-	document.getElementById("blackLocation").style.display='none';
-	document.getElementById("indiaLocation").style.display='none';
-	document.getElementById("sumatraLocation").style.display='none';
-	document.getElementById("javaLocation").style.display='none';
-	document.getElementById("yourLocation").style.display='none';
-	document.getElementById("yourLocation").style.display='block';
+
 }
 
 function showError(error) {
@@ -155,12 +148,12 @@ function showError(error) {
             break;
     }
 }
-function distance(lat1,lon1,lat2,lon2) {
+function distance(lat1,lat2,lon1,lon2) {
 	var dlat = (lat2 - lat1)/2;
 	var dlon = (lon2 - lon1)/2;
 	
-	var temp = Math.pow(Math.sin(dlat), 2) + Math.cos(lat1) * 
-		Math.cos(lat2) * Math.pow(Math.sin(dlon), 2);
+	var temp = Math.pow(Math.sin(dlat), 2) + (Math.cos(lat1) * 
+		Math.cos(lat2) * Math.pow(Math.sin(dlon), 2));
 
 	return 2 * r * Math.asin(Math.sqrt(temp));
 }
