@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<meta charset="utf-8">
+    <title> About Rhinos </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+	
+	<p align="left">
+	
+
+
+</p>
+</head>
+
+
+
+
+<body>
+<div class="header">
+
+
+	<header> 
+	<!-- <div class="w3-teal" id="mobileMenu" style="float:left"> -->
+  <!-- <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button> -->
+  <!-- <div class="w3-container" > -->
+
+  <!-- </div> -->
+<!-- </div>	 -->
+		
+		<h1 class="left" > Rhinos </h1>
+		<h5 class="right"> by Sachin Rajgopal </h5>
+		<span  class="right" id="mobileMenu" style="font-size:30px;cursor:pointer;align:right;float:right;" onclick="openNav()">&#9776;</span>
+	</header>
+	
+	<nav>
+		<div id="desktopMenu">
+			<a href="quickpeek.html" id="a1" class="menu">Quick peek</a> 
+			<a href="species.html" id="b1" class="menu">Rhino species</a> 
+			<a href="location.html" id="c1"  class="menu">Rhino location</a>
+			<a href="poaching.html" id="d1"  class="menu">Poaching</a>
+			<a href="about.html" id="e1"  class="menu">About</a>
+		</div>
+		
+		
+		 <div id="mySidenav" class="sidenav">
+			  <a class="sideBarMenu" href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close sidebar<!--&times;--></a>
+			  
+				<a class="sideBarMenu" href="quickpeek.html" id="a2" onclick="closeNav();" >Quick peek</a> 
+				<a class="sideBarMenu" href="species.html" id="b2" onclick="closeNav();" >Rhino species</a> 
+				<a class="sideBarMenu" href="location.html" id="c2" onclick="closeNav();" >Rhino location</a>
+				<a class="sideBarMenu" href="poaching.html" id="d2" onclick="closeNav();" >Poaching</a>
+				<a class="sideBarMenu" href="about.html" id="e2" onclick="closeNav();" >About</a>
+		</div>
+
+		<!-- Use any element to open the sidenav -->
+		<span onclick="openNav()">open</span>
+
+	</nav>
+	
+<script>
+	/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "80%";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+} 
+	
+</script>
+
+	
+</div>	
+
+	
+		
+	
+
+	<section id="about">
+		<div style="max-width: 1000px" >
+			<p class="responsive">
+			This website was created for the first exam task of the KIT module: Mobile Computing and Internet of Things.
+			The creator of this website, Sachin Rajgopal, is a huge fan of rhinos and would like people to know about rhinos and the crisis they are facing.
+			</p>
+			<p class="responsive">
+			Sources: <br>
+			https://www.savetherhino.org/ <br>
+			https://rhinos.org/ <br>
+			http://www.rhinoresourcecenter.com/ <br>
+			</p>
+			
+		</div>
+	</section>
+
+
+	
+</body>
+</div>
+</html>

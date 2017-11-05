@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<meta charset="utf-8">
+    <title> About Rhinos </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+	
+	<p align="left">
+	
+
+
+</p>
+</head>
+
+
+
+
+<body>
+<div class="header">
+
+
+	<header> 
+	<!-- <div class="w3-teal" id="mobileMenu" style="float:left"> -->
+  <!-- <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button> -->
+  <!-- <div class="w3-container" > -->
+
+  <!-- </div> -->
+<!-- </div>	 -->
+		
+		<h1 class="left" > Rhinos </h1>
+		<h5 class="right"> by Sachin Rajgopal </h5>
+		<span  class="right" id="mobileMenu" style="font-size:30px;cursor:pointer;align:right;float:right;" onclick="openNav()">&#9776;</span>
+	</header>
+	
+	<nav>
+		<div id="desktopMenu">
+			<a href="quickpeek.html" id="a1" class="menu">Quick peek</a> 
+			<a href="species.html" id="b1" class="menu">Rhino species</a> 
+			<a href="location.html" id="c1"  class="menu">Rhino location</a>
+			<a href="poaching.html" id="d1"  class="menu">Poaching</a>
+			<a href="about.html" id="e1"  class="menu">About</a>
+		</div>
+		
+		
+		 <div id="mySidenav" class="sidenav">
+			  <a class="sideBarMenu" href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close sidebar<!--&times;--></a>
+			  
+				<a class="sideBarMenu" href="quickpeek.html" id="a2" onclick="closeNav();" >Quick peek</a> 
+				<a class="sideBarMenu" href="species.html" id="b2" onclick="closeNav();" >Rhino species</a> 
+				<a class="sideBarMenu" href="location.html" id="c2" onclick="closeNav();" >Rhino location</a>
+				<a class="sideBarMenu" href="poaching.html" id="d2" onclick="closeNav();" >Poaching</a>
+				<a class="sideBarMenu" href="about.html" id="e2" onclick="closeNav();" >About</a>
+		</div>
+
+		<!-- Use any element to open the sidenav -->
+		<span onclick="openNav()">open</span>
+
+
+
+	</nav>
+<script>
+	/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "80%";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+} 
+	
+</script>
+	
+
+	
+
+	
+</div>	
+
+	
+		
+	
+	<section id="location">
+	
+		<h2> Locations of the rhino species </h2>
+	
+		<p class="responsive">
+		This part of the site is there for you to see where the rhinos live and see how far you live away from them.
+		Of course this is only the distance, and rhino sanctuaries are normally rather remote. Nevertheless, hopefully this give people an idea about how far they live.
+		</p>
+		
+		<p class="responsive">
+		
+		Just press the first button below to get your current location. Then press the second button to get the distances (with the Haversine formula) to the rhino sanctuaries from your current location.
+		</p>
+		
+		<button onclick="getLocation();"> <!--class="fi)"-->Get current location and calculate distances!</button>
+
+		<p id="geoloc" >Latitude: <br> Longitude:</p>
+
+		<!-- <button id="calc" onclick="calcDistance()">Get distances to current location</button> -->
+
+		<!--
+		<p id="dist">Distance not detected yet. </p>
+		-->
+		<div class="outer">
+			<div class="inner">
+				<table>
+					<tr>
+						<th class=fix>Rhino species</th>
+						<th>White</th>
+						<th>Black</th>
+						<th>Indian</th>
+						<th>Sumatran</th>
+						<th>Javan</th>
+					</tr>
+					<tr>
+						<th class=fix>Distance as the crow flies in km</th>
+						<td><div id="wdist">- </div></td>
+						<td><div id="bdist">- </div></td>
+						<td><div id="idist">- </div></td>
+						<td><div id="sdist">- </div></td>
+						<td><div id="jdist">- </div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<p>
+		<a href="javascript:void(0)" onclick="selectLocation(5);">Your location</a> |
+		<a href="javascript:void(0)" onclick="selectLocation(0);">White rhino</a> | 
+		<a href="javascript:void(0)" onclick="selectLocation(1);">Black rhino</a> |  
+		<a href="javascript:void(0)" onclick="selectLocation(2);">Indian rhino</a> |
+		<a href="javascript:void(0)" onclick="selectLocation(3);">Sumatran Rhino</a> |
+		<a href="javascript:void(0)" onclick="selectLocation(4);">Javan Rhino</a>
+		</p>
+		
+		<!-- <div id="mapholder"> </div> -->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSmjNMwcglEAOmYjXGrekM4yo0j78AUHg" ></script> -->
+		<iframe
+			id="yourLocation"
+			width="100%"
+			height="450"
+			frameborder="0" style="border:0"
+			class="map"
+			src=""
+		>
+		</iframe>
+		
+		<iframe
+			id="whiteLocation"
+			width="100%"
+			height="450"
+			frameborder="0" style="border:0"
+			class="mapInit"
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAZyyisWD6opTg7vkOCUs0ODo3auLqosFU
+			&q=Kruger+National+Park,South+Africa&zoom=4" allowfullscreen>
+		</iframe>
+		
+		<iframe
+			id="blackLocation"
+			width="100%"
+			height="450"
+			frameborder="0" style="border:0"
+			class="map"
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAZyyisWD6opTg7vkOCUs0ODo3auLqosFU
+				&q=Etosha+National+Park,South+Africa&zoom=4" allowfullscreen>
+		</iframe>
+		<iframe
+			id="indiaLocation"
+			width="100%"
+			height="450"
+			frameborder="0" style="border:0"
+			class="map"
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAZyyisWD6opTg7vkOCUs0ODo3auLqosFU
+			&q=Kaziranga+National+Park,India&zoom=4" allowfullscreen>
+		</iframe>
+		
+		<iframe
+			id="sumatraLocation"
+			width="100%"
+			height="450"
+			frameborder="0" style="border:0"
+			class="map"
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAZyyisWD6opTg7vkOCUs0ODo3auLqosFU
+			&q=Way+Kambas+National+Park,Indonesia&zoom=4" allowfullscreen>
+		</iframe>
+		
+		<iframe
+			id="javaLocation"
+
+			frameborder="0" style="border:0"
+			width="100%"
+			height="450"
+			class="map"
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAZyyisWD6opTg7vkOCUs0ODo3auLqosFU
+			&q=Ujong+Kulon+National+Park,Indonesia&zoom=4" allowfullscreen>
+		</iframe>
+	</section>
+
+	
+
+
+	<script type="text/javascript" language="javascript">
+		var x = document.getElementById("geoloc");
+		var y = document.getElementById("dist");
+		var wd = document.getElementById("wdist");
+		var bd = document.getElementById("bdist");
+		var id = document.getElementById("idist");
+		var sd = document.getElementById("sdist");
+		var jd = document.getElementById("jdist");
+	</script>
+	
+	
+
+
+	
+</body>
+</div>
+</html>

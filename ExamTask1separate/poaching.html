@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<meta charset="utf-8">
+    <title> About Rhinos </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+	
+	<p align="left">
+	
+
+
+</p>
+</head>
+
+
+
+
+<body>
+<div class="header">
+
+
+	<header> 
+	<!-- <div class="w3-teal" id="mobileMenu" style="float:left"> -->
+  <!-- <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button> -->
+  <!-- <div class="w3-container" > -->
+
+  <!-- </div> -->
+<!-- </div>	 -->
+		
+		<h1 class="left" > Rhinos </h1>
+		<h5 class="right"> by Sachin Rajgopal </h5>
+		<span  class="right" id="mobileMenu" style="font-size:30px;cursor:pointer;align:right;float:right;" onclick="openNav()">&#9776;</span>
+	</header>
+	
+	<nav>
+		<div id="desktopMenu">
+			<a href="quickpeek.html" id="a1" class="menu">Quick peek</a> 
+			<a href="species.html" id="b1" class="menu">Rhino species</a> 
+			<a href="location.html" id="c1"  class="menu">Rhino location</a>
+			<a href="poaching.html" id="d1"  class="menu">Poaching</a>
+			<a href="about.html" id="e1"  class="menu">About</a>
+		</div>
+		
+		
+		 <div id="mySidenav" class="sidenav">
+			  <a class="sideBarMenu" href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close sidebar<!--&times;--></a>
+			  
+				<a class="sideBarMenu" href="quickpeek.html" id="a2" onclick="closeNav();" >Quick peek</a> 
+				<a class="sideBarMenu" href="species.html" id="b2" onclick="closeNav();" >Rhino species</a> 
+				<a class="sideBarMenu" href="location.html" id="c2" onclick="closeNav();" >Rhino location</a>
+				<a class="sideBarMenu" href="poaching.html" id="d2" onclick="closeNav();" >Poaching</a>
+				<a class="sideBarMenu" href="about.html" id="e2" onclick="closeNav();" >About</a>
+		</div>
+
+		<!-- Use any element to open the sidenav -->
+		<span onclick="openNav()">open</span>
+
+
+
+	</nav>
+	
+<script>
+	/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "80%";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+} 
+	
+</script>
+	
+
+
+	
+</div>	
+
+	
+
+	<section id="poaching" >
+		<h2> Rhino poaching </h2>
+		
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+		
+		
+		<p class="responsive"> 
+			Rhino poaching is an issue which is threatening the continued existence of rhinos in the wild. 
+			Before the 2000s, rhinos were hunted for their horns, which were used as decorations in the Middle East, making the population collapse. Fortunately this stopped by the year 2000.
+			As seen in the chart below, for the last few years, more than a 1000 rhinos die every year. Rhinos are poached for their horn, which are used in traditional chinese medicine.
+			Rhino horn is made of keratin, which is the same material as human finger/toe nails. This means that rhino horn also has the same medicinal properties. 
+			Since finger nails are actually not used in medicine, this of course means that rhino horn also have no medicinal benefits. 
+		</p>
+		<p class="responsive">
+			Rhinos are slaughtered for medicine based on superstition. While in the 2000s poaching rates were low, the increased wealth of China and Vietnam have increased the interest in traditional chinese medicine.
+			Prices for rhino horn reportedly are higher than prices for gold and platinum. This allowed poachers to use sophisticated equipment like machine guns and helicopters, while rangers use normal rifles.
+			Unfortunately, rhinos are not the only species threatened by traditional chinese medicine. 
+			Elephants, tigers, pangolins, vaquitas and many other species are at risk.
+		</p>
+		
+		<div id="container1" style="min-height: 500px"></div>
+	</section>
+
+
+	
+
+
+	
+	
+
+
+
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+	
+	
+	<script>
+	Highcharts.chart('container1', {
+    chart: {
+		backgroundColor:'#F5F5DC',
+		plotBackgroundColor: '#FFFFFF',
+        <!-- plotBackgroundColor: '#F5F5DC', -->
+        type: 'column'
+    },
+    title: {
+        text: 'Rhinos poached in South Africa'
+    },
+    subtitle: {
+        text: 'Source: https://www.savetherhino.org/rhino_info/poaching_statistics'
+    },
+    xAxis: {
+        categories: [
+			'2007',
+			'2008',
+			'2009',
+			'2010',
+			'2011',
+			'2012',
+			'2013',
+			'2014',
+			'2015',
+			'2016'
+        ],
+		title : {
+			text: 'Year'
+		},
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Rhinos poached'
+        }
+    },
+    tooltip: {
+        shared: true,
+        useHTML: true
+		
+    },
+	
+	
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+	legend: {
+		enabled: false
+	},
+    series: [
+	{
+		name: "Rhinos poached",
+		color:'#DC143C',
+		data: [13,83,122,333,448,668,1004,1215,1175,1054]
+	},
+	{
+		name: "Percentage increase",
+		data: [0,538.46,46.99,172.95,34.53,49.11,50.30,21.02,-3.29,-10.30],
+		fillColor: 'transparent',
+		type: 'spline',
+		marker: {
+            enabled: false
+		},
+		states: {
+                    hover: {
+                        enabled: false
+                    }
+                },
+		lineColor: 'transparent'    // make the line invisible
+
+	}
+	]
+});
+	
+	</script>
+	
+</body>
+</div>
+</html>
