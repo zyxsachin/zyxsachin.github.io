@@ -128,7 +128,7 @@ function showPosition(position) {
 	longi = position.coords.longitude;
 	// latlon = lat + "," + lon;
     x.innerHTML = "Latitude: " + position.coords.latitude.toFixed(5) + 
-    "<br>Longitude: " + position.coords.longitude.toFixed(5);;	
+    "<br>Longitude: " + position.coords.longitude.toFixed(5);	
 	calcDistance();
 
 }
