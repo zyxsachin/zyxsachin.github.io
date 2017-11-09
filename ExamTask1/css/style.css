@@ -75,12 +75,15 @@ h6 {
 
 figure {
 	padding: 2px;
+	max-width : 95%;
+	
 }
 
 figcaption {
-	word-wrap: break-all;
+	word-wrap: break-word;
+	max-width : 100%;
+	/* word-wrap: break-word; */
 }
-
 
 
 
