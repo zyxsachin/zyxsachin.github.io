@@ -79,7 +79,8 @@ figure {
 }
 
 figcaption {
-	word-wrap: break-all;
+	word-wrap: break-word;
+	max-width : 100%;
 	/* word-wrap: break-word; */
 }
 
