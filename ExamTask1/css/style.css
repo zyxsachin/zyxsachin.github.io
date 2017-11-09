@@ -309,6 +309,9 @@ button {
 		max-width: 100%
 	}
 	
+	.bLink {
+		text-align:left;
+	}
 	
 }
 @media screen and (min-width: 1200px) {
@@ -323,6 +326,10 @@ button {
 		float:right;
 		width : 500px;
 		max-width: 100%;
+	}
+	
+	.bLink {
+		text-align:right;
 	}
 	
 }

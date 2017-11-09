@@ -78,7 +78,7 @@ figure {
 }
 
 figcaption {
-	word-wrap: break-word;
+	word-wrap: break-all;
 }
 
 
@@ -311,7 +311,6 @@ button {
 	
 	.bLink {
 		text-align:left;
-		
 	}
 	
 	
@@ -332,7 +331,6 @@ button {
 	
 	.bLink {
 		text-align:right;
-		
 	}
 	
 }
